@@ -1,0 +1,94 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  width: 100%;/* Limit the maximum width of the nav */
+  height: 150px;
+  border-bottom: solid 1px #000;
+  padding: 20px 45px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  margin: 0 auto; /* Center the nav */
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100px;
+  height: auto; /* Ensure the image maintains its aspect ratio */
+  
+}
+
+span {
+  font-size: 2rem;
+  font-weight: 500;
+  align-items: center;
+  margin-left: 15px; /* Add some spacing between the image and text */
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: red;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+a:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 840px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  div {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  a {
+    padding: 8px 20px;
+  }
+}
