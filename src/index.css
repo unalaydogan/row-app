@@ -1,7 +1,15 @@
-body,
-html {
+* {
+  
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  background: #c3cfe2;
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
@@ -9,63 +17,86 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Poppins", sans-serif;
+  background: #fff;
+  backdrop-filter: blur(10px);
   width: 100%;/* Limit the maximum width of the nav */
-  height: 150px;
-  border-bottom: solid 1px #000;
+  height: 100px;
   padding: 20px 45px;
   box-sizing: border-box; /* Include padding in the width calculation */
   margin: 0 auto; /* Center the nav */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-div {
+.nav-logo-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
 }
 
-img {
-  width: 100px;
-  height: auto; /* Ensure the image maintains its aspect ratio */
-  
+.nav-logo-div img {
+  width: 80px;
+  height: 80px; /* Ensure the image maintains its aspect ratio */
+  object-fit: contain;
 }
 
-span {
-  font-size: 2rem;
-  font-weight: 500;
-  align-items: center;
+.nav-logo-div span {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-left: 15px; /* Add some spacing between the image and text */
 }
 
 ul {
   display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 li {
-  margin-right: 20px;
+  position: relative;
 }
 
 a {
-  padding: 8px 20px;
-  border-radius: 20px;
+  padding: 12px 25px;
+  margin-right: 10px;
+  border-radius: 12px;
   background-color: red;
   color: #fff;
+  font-weight: 600;
   text-decoration: none;
-  white-space: nowrap; /* Prevent text wrapping */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+  
+  transition: all 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  border-radius: 20px;
+  transform: translateY(-3px); /* Slight upward lift */
+  background-color: #ff4444;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.35);
 }
 
+main {
+    
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: #2d3436;
+  margin: 180px auto 0;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(20px);
+  animation: floatUp 0.6s ease forwards;
+}
 /* Responsive adjustments */
 @media (max-width: 840px) {
   nav {
@@ -74,7 +105,7 @@ a:hover {
     padding: 10px;
   }
 
-  div {
+  .nav-logo-div {
     margin-bottom: 10px;
   }
 
